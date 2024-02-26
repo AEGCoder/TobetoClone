@@ -1,0 +1,30 @@
+[
+    {
+        "id": "1",
+        "title":"Front End Developer"
+    },
+    {
+        "id": "2",
+        "title":"Back End Developer"
+    },
+    {
+        "id": "3",
+        "title":"Full End Developer"
+    },
+    {
+        "id": "4",
+        "title":"Web & Mobile Developer"
+    },
+    {
+        "id": "5",
+        "title":"Veri Bilimi Uzmanı"
+    },
+    {
+        "id": "6",
+        "title":"Siber Güvenlik Uzmanı"
+    },
+    {
+        "id": "7",
+        "title":"UI / UX Developer"
+    }
+]

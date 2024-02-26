@@ -1,0 +1,67 @@
+[
+    {
+        "id:" :1,
+        "name": "Öz Farkındalık"
+    },
+    {
+        "id:" :2,
+        "name": "Kişisel Motivasyon"
+    },
+    {
+        "id:" :3,
+        "name": "Karar Verme"
+    },
+    {
+        "id:" :4,
+        "name": "Eylem Odaklılık"
+    },
+    {
+        "id:" :5,
+        "name": "Müşteri Odaklılık"
+    },
+    {
+        "id:" :6,
+        "name": "Dijital Okuryazarlık"
+    },
+    {
+        "id:" :7,
+        "name": "Müzakere"
+    },
+    {
+        "id:" :8,
+        "name": "Planlama Organize Etme"
+    },
+    {
+        "id:" :9,
+        "name": "Duygusal Zeka"
+    },
+    {
+        "id:" :10,
+        "name": "Verimlilik"
+    },
+    {
+        "id:" :11,
+        "name": "Zaman Yönetimi"
+    },
+    {
+        "id:" :12,
+        "name": "Pozitif Bakış"
+    },
+    {
+        "id:" :13,
+        "name": "İnsiyatif Alma"
+    },
+    {
+        "id:" :14,
+        "name": "Sürekli Öğrenme"
+    },
+    {
+        "id:" :15,
+        "name": "Takım Olma"
+    },
+    {
+        "id:" :16,
+        "name": "Etik"
+    }
+
+]

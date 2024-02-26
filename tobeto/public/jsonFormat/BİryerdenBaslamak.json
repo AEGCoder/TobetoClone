@@ -1,0 +1,50 @@
+[
+    {
+        "id":1,
+        "title":"C# Programming"
+    },
+    {
+        "id":2,
+        "title":"Object Oriented Programming (OOP)"
+    },
+    {
+        "id":3,
+        "title":"Windows Form Application Programming"
+    },
+    {
+        "id":4,
+        "title":"Microsoft SQL Server Database"
+    },
+    {
+        "id":5,
+        "title":"ADONET"
+    },
+    {
+        "id":6,
+        "title":"DAPPER"
+    },
+    {
+        "id":7,
+        "title":"HTML-CSS-SASS"
+    },
+    {
+        "id":8,
+        "title":"Javascript"
+    },
+    {
+        "id":9,
+        "title":"ASPNET Core MVC"
+    },
+    {
+        "id":10,
+        "title":"Git / Github"
+    },
+    {
+        "id":11,
+        "title":"ReactJS"
+    },
+    {
+        "id":12,
+        "title":"NextJS"
+    }
+]

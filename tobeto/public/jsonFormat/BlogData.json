@@ -1,0 +1,66 @@
+[
+    {
+        "id": "1",
+        "title": "Web API Nedir?",
+        "description": "Programlama yazılım arayüzü tanımlayan bir kavramdır. Web API'lar, farklı yazılım uygulamaları arasında sorunsuz iletişim sağlamak için kullanılır.",
+        "date": "19 TEMMUZ 2023",
+        "img":"img/tobetobuay/buay1.png"
+    },
+    {
+        "id": "2",
+        "title": "Veritabanı Yönetimi",
+        "description": "Veritabanı yönetimi, bilgilerin düzenli bir şekilde depolandığı ve erişildiği bir yazılım sürecidir. SQL ve NoSQL gibi veritabanı sistemleri kullanılır.",
+        "date": "25 AĞUSTOS 2023",
+        "img":"img/tobetobuay/buay2.jpeg"
+    },
+    {
+        "id": "3",
+        "title": "Mobil Uygulama Geliştirme",
+        "description": "Mobil uygulama geliştirme, iOS ve Android gibi platformlar için uygulama oluşturma sürecini kapsar. Kotlin, Swift, Flutter gibi araçlar kullanılır.",
+        "date": "10 EKİM 2023",
+        "img":"img/tobetobuay/buay3.jpeg"
+    },
+    {
+        "id": "4",
+        "title": "Yapay Zeka ve Makine Öğrenimi",
+        "description": "Yapay zeka ve makine öğrenimi, bilgisayar sistemlerine öğrenme yeteneği kazandırmak amacıyla kullanılan teknolojileri içerir. Python sıklıkla kullanılır.",
+        "date": "2 KASIM 2023",
+        "img":"img/tobetobuay/buay4.jpeg"
+    },
+    {
+        "id": "5",
+        "title": "DevOps Kültürü",
+        "description": "DevOps, yazılım geliştirme ve IT operasyonları arasındaki işbirliğini ve iletişimi artırmayı hedefleyen bir kültürdür. Otomasyon ve sürekli entegrasyon önemlidir.",
+        "date": "15 ARALIK 2023",
+        "img":"img/tobetobuay/buay5.jpeg"
+        
+    },
+    {
+        "id": "6",
+        "title": "Web Güvenliği",
+        "description": "Web güvenliği, internet uygulamalarını ve kullanıcı verilerini kötü niyetli saldırılardan korumak için alınan önlemleri içerir. HTTPS, güvenli kodlama gibi konular önemlidir.",
+        "date": "8 OCAK 2024",
+        "img":"img/tobetobuay/buay6.jpeg"
+    },
+    {
+        "id": "7",
+        "title": "Oyun Geliştirme",
+        "description": "Oyun geliştirme, bilgisayar oyunları ve mobil oyunlar gibi eğlence yazılımları oluşturmayı içerir. Unity, Unreal Engine gibi platformlar yaygın olarak kullanılır.",
+        "date": "20 ŞUBAT 2024",
+        "img":"img/tobetobuay/buay7.jpeg"
+    },
+    {
+        "id": "8",
+        "title": "E-ticaret Sistemleri",
+        "description": "E-ticaret sistemleri, online alışveriş platformlarını yöneten yazılımları kapsar. Magento, Shopify gibi alışveriş sepeti çözümleri popülerdir.",
+        "date": "5 MART 2024",
+        "img":"img/tobetobuay/buay8.jpeg"
+    },
+    {
+        "id": "9",
+        "title": "Blockchain Teknolojisi",
+        "description": "Blockchain, dağıtık defter teknolojisi olarak bilinir ve kripto paraların temelini oluşturur. Akıllı kontratlar ve merkezi olmayan uygulamalar bu alanda kullanılır.",
+        "date": "18 NİSAN 2024",
+        "img":"img/tobetobuay/buay9.jpeg"
+    }
+]
