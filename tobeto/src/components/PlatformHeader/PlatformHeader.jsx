@@ -4,33 +4,54 @@ import { FaArrowDown } from "react-icons/fa6";
 import { NavLink } from 'react-router-dom';
 import { DownOutlined } from '@ant-design/icons';
 import { Dropdown, Space,Drawer } from 'antd';
-import {Link} from 'react-router-dom' 
+import {Link,useNavigate} from 'react-router-dom' 
 import { FaBars } from "react-icons/fa";
+import {useSelector,useDispatch} from "react-redux";
+import {useLogoutMutation} from "../../redux/features/auth/userApiSlice";
+import {logout} from "../../redux/features/auth/authSlice";
 
-
-
-const items = [
-  {
-    key: '1',
-    label: (
-      <Link  to="/profilbilgileri">
-        Profil Bilfileri
-      </Link>
-    ),
-  },
-  {
-    key: '2',
-    label: (
-      <button>
-        Oturum kapat
-      </button>
-    ),
-  },
-
-];
 
 const PlatformHeader = () => {
+
   const [open, setOpen] = useState(false);
+
+  const {userInfo} = useSelector((state) => state.auth);
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const [logoutApiCall] = useLogoutMutation();
+
+  const handleLogout = async () => {
+    try {
+      await logoutApiCall().unwrap();
+      dispatch(logout());
+      navigate("/giris");
+    } catch (error) {
+      console.log(error);
+    }
+  }
+  const items = [
+    {
+      key: '1',
+      label: (
+        <Link  to="/profilbilgileri">
+          Profil Bilfileri
+        </Link>
+      ),
+    },
+    {
+      key: '2',
+      label: (
+        <button onClick={handleLogout}
+        >
+          Oturum kapat
+        </button>
+      ),
+    },
+  
+  ];
+  
+
+
   
   const showDrawer = () => {
     setOpen(true);
@@ -77,7 +98,7 @@ const PlatformHeader = () => {
   >
     <a onClick={(e) => e.preventDefault()}>
       <Space>
-        Mahsun Kiraz
+      {userInfo && userInfo.name ? userInfo.name : "Kullanıcı"}{" "}
         <DownOutlined />
       </Space>
     </a>
@@ -118,7 +139,7 @@ const PlatformHeader = () => {
   >
     <a onClick={(e) => e.preventDefault()}>
       <Space>
-        Mahsun Kiraz
+      {userInfo && userInfo.name ? userInfo.name : "Kullanıcı"}{" "}
         <DownOutlined />
       </Space>
     </a>

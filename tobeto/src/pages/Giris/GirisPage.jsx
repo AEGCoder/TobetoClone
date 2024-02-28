@@ -1,14 +1,36 @@
-import React from "react";
+import React,{useState,useEffect} from "react";
 import Footer from "../../components/Footer/Footer";
 import { Form, Input } from "antd";
 import { Link,useNavigate} from "react-router-dom";
-
-
+import {useDispatch,useSelector} from "react-redux";
+import {useLoginMutation} from "../../redux/features/auth/userApiSlice"
+import {setCredentials} from "../../redux/features/auth/authSlice"
+import {toast} from "react-toastify"
 const GirisPage = () => {
   const navigate = useNavigate();
-  const onFinish = (values) => {
-    console.log("Success:", values);
-    navigate("/platform");
+  const dispatch = useDispatch()
+  const [login,{isLoading}] = useLoginMutation()
+
+
+    const {userInfo} = useSelector((state) => state.auth)
+
+    useEffect(() => {
+      if(userInfo){
+        navigate("/platform")
+      }
+    }, [navigate,userInfo]);
+
+
+  const onFinish = async (values) => {
+      try {
+        const res = await login(values).unwrap()
+        dispatch(setCredentials({...res}))
+        navigate("/platform")
+        toast.success("Giriş Başarılı")
+
+      } catch (error) {
+        toast.error(error?.data?.message || error.error);
+      }
   };
   const onFinishFailed = (errorInfo) => {
     console.log("Failed:", errorInfo);

@@ -5,7 +5,8 @@ import Loading from "./components/loading/Loading";
 import Banner from "./components/Banner/Banner";
 import Header from "./components/Header/Header";
 import { CustomRouter } from "./router/CustomRouter";
-
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 const App = () => {
   const [loading, setLoading] = useState(true);
 
@@ -21,6 +22,7 @@ const App = () => {
         <Loading />
       ) : (
         <Router>
+          <ToastContainer />
           <Routes>
             {CustomRouter.map((item, index) => (
               <Route

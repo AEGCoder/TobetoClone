@@ -4,11 +4,21 @@ import { Tabs } from "antd";
 import PlatformBasvurularCom from "../../components/PlatfomBasvurular/PlatformBasvurularCom";
 import PlatformEgitimlerimCom from "../../components/PlatformEgitimlerim/PlatformEgitimlerimCom";
 import PlatformDuyuruHaber from "../../components/PlatformDuyuruVeHaberler/PlatformDuyuruHaber";
-
+import {useSelector} from "react-redux";
+import {useNavigate} from "react-router-dom";
 const PlatformPage = () => {
 
 
   const [tabPosition, setTabPosition] = useState('top');
+    const {userInfo} = useSelector((state) => state.auth);
+    const navigate = useNavigate();
+
+     useEffect(() => {
+    if (!userInfo) {
+      navigate("/giris");
+     } [useNavigate,userInfo]});
+
+
 
   useEffect(() => {
     const handleResize = () => {
@@ -72,7 +82,9 @@ const PlatformPage = () => {
           <p>
             <span className="text-[#9833FF]">TOBETO'ya</span> hoş geldin
           </p>
-          <span>Ali eren</span>
+          <span>
+            {userInfo && userInfo.name ? userInfo.name : "Kullanıcı"}{" "}
+          </span>
           <p className="pt-10 sm:text-xl text-lg">
             Yeni nesil öğrenme deneyimi ile Tobeto kariyer yolculuğunda senin
             yanında!

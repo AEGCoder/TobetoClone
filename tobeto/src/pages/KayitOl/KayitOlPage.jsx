@@ -1,16 +1,39 @@
-import React from 'react'
-import { Button, Checkbox, Form, Input } from 'antd';
+import React,{useEffect} from 'react'
+import {Form, Input,Button } from 'antd';
 import Lottie from "lottie-react"
 import animationData from "../../assets/anim2.json"
 import Footer from '../../components/Footer/Footer'
+import {useNavigate } from 'react-router-dom';
+import {useDispatch,useSelector} from "react-redux";
+import {useRegisterMutation} from "../../redux/features/auth/userApiSlice";
+import {setCredentials} from "../../redux/features/auth/authSlice";
+import {toast} from "react-toastify";
 const KayitOlPage = () => {
 
-    const onFinish = (values) => {
-        console.log('Success:', values);
-      };
-      const onFinishFailed = (errorInfo) => {
-        console.log('Failed:', errorInfo);
-      };
+    const [registerApiCall,{isLoading}] = useRegisterMutation();
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
+    const {userInfo} = useSelector((state) => state.auth);
+
+    useEffect(() => {
+      if(userInfo){
+        navigate("/platform");
+      }
+    } ,[userInfo,navigate])
+
+    const onFinish = async (values) => {
+      console.log('Form submitted with values:', values);
+      const res = await registerApiCall(values).unwrap();
+      dispatch(setCredentials({ ...res }));
+      navigate("/platform");
+    };
+    
+    const onFinishFailed = (errorInfo) => {
+      console.log('Form submission failed with error:', errorInfo);
+      toast.error("Bir hata oluştu");
+    };
+    
+    
 
   return (
     <div className=''>
@@ -19,7 +42,7 @@ const KayitOlPage = () => {
           <div className='border-4  p-10 mt-5 flex flex-col gap-y-3 sm:w-[70%] w-full h-[550px]'>
               <img className='w-44 object-cover' src="img/blacktobetoLogo.svg" alt="" />
               <h3 className='text-center text-xl font-bold text-gray-700 py-1'>Hemen Kayıt Ol</h3>
-              <Form  initialValues={{
+              <Form id="kayitFormu" initialValues={{
       remember: true,
     }}
     onFinish={onFinish}
@@ -99,7 +122,7 @@ const KayitOlPage = () => {
         <Input.Password placeholder='Şifre Tekrar'/>
       </Form.Item>
 
-      <button className="bg-[#9833ff] text-white w-full text-center py-1 rounded-xl" type='submit'>Kayıt Ol</button>
+      <Button className="bg-[#9833ff] text-white w-full text-center py-1 rounded-xl" form="kayitFormu" key="submit" htmlType="submit">Kayıt Ol</Button>
 
 
 
