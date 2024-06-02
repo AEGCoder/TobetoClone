@@ -1,11 +1,16 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App.jsx'
+import {Layout} from './layouts/Layout.jsx'
+import {BrowserRouter as Router} from 'react-router-dom'
 import './index.css'
-import { store } from './redux/app/store.js'
-import { Provider } from 'react-redux'
+
+
+
 ReactDOM.createRoot(document.getElementById('root')).render(
-    <Provider store={store}>
+   <Router>
+     <Layout>
         <App />
-    </Provider>
+    </Layout>
+   </Router>
 )

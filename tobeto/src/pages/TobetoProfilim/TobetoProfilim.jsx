@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import PlatformHeader from "../../components/PlatformHeader/PlatformHeader";
 import { FaUserCircle, FaUserSecret, FaPhoneAlt } from "react-icons/fa";
 import { BsFillCalendarDateFill } from "react-icons/bs";
@@ -10,12 +10,24 @@ import rozetData from "../../assets/rozet1.json";
 import rozetData2 from "../../assets/rozet2.json";
 import rozetData3 from "../../assets/rozet3.json";
 import { FaEdit,FaShareAlt } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
+
 
 const TobetoProfilim = () => {
+
+  const navigate = useNavigate();
+  // JSON string'ini JavaScript nesnesine dönüştür
+  const user = JSON.parse(localStorage.getItem("user"));
+
   let total = 0;
   for (let i = 0; i < 22; i++) {
     total += i;
   }
+  useEffect(() => {
+    if (!user) {
+      navigate("/");
+    }
+  }, [user, navigate]);
   return (
     <div className="bg-gray-100 w-full min-h-screen text-black">
       <PlatformHeader />

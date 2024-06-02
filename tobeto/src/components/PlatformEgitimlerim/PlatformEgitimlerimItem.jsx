@@ -3,10 +3,10 @@ const PlatformEgitimlerimItem = ({egitim}) => {
   return (
     <div>
         <li className="border h-[300px] flex flex-col items-center p-2 rounded-lg">
-          <div className="w-full h-[60%]">
+          <div className="w-full h-[50%]">
             <img
               className="w-full h-full object-cover rounded-lg"
-              src={egitim.image}
+              src={egitim.img}
               alt=""
             />
           </div>
@@ -17,7 +17,7 @@ const PlatformEgitimlerimItem = ({egitim}) => {
                 {egitim.title}
               </p>
               <p>
-                {egitim.date}
+                {egitim.createdAt && new Date(egitim.createdAt).toLocaleDateString()}
               </p>
             </div>
             <div>

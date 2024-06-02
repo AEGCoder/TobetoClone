@@ -1,23 +1,22 @@
 import React,{useState,useEffect} from "react";
 import PlatformHeader from "../../components/PlatformHeader/PlatformHeader";
 import { Tabs } from "antd";
+import {useNavigate} from "react-router-dom";
 import PlatformBasvurularCom from "../../components/PlatfomBasvurular/PlatformBasvurularCom";
 import PlatformEgitimlerimCom from "../../components/PlatformEgitimlerim/PlatformEgitimlerimCom";
 import PlatformDuyuruHaber from "../../components/PlatformDuyuruVeHaberler/PlatformDuyuruHaber";
-import {useSelector} from "react-redux";
-import {useNavigate} from "react-router-dom";
 const PlatformPage = () => {
-
-
+  const navigate = useNavigate();
+ // JSON string'ini JavaScript nesnesine dönüştür
+ const user = JSON.parse(localStorage.getItem("user"));
   const [tabPosition, setTabPosition] = useState('top');
-    const {userInfo} = useSelector((state) => state.auth);
-    const navigate = useNavigate();
 
-     useEffect(() => {
-    if (!userInfo) {
-      navigate("/giris");
-     } [useNavigate,userInfo]});
 
+  useEffect(() => {
+    if (!user) {
+      navigate("/");
+    }
+  }, [user, navigate]);
 
 
   useEffect(() => {
@@ -72,7 +71,6 @@ const PlatformPage = () => {
       ),
     },
   ];
-
   return (
     <div className="bg-gray-100 w-full min-h-screen pb-14">
       <PlatformHeader />
@@ -83,7 +81,9 @@ const PlatformPage = () => {
             <span className="text-[#9833FF]">TOBETO'ya</span> hoş geldin
           </p>
           <span>
-            {userInfo && userInfo.name ? userInfo.name : "Kullanıcı"}{" "}
+            { user && (
+              <p className="text-[#9833FF]"> {user.email} </p>
+            )}
           </span>
           <p className="pt-10 sm:text-xl text-lg">
             Yeni nesil öğrenme deneyimi ile Tobeto kariyer yolculuğunda senin

@@ -1,33 +1,24 @@
 import React,{useState} from 'react'
 import { SiHomebridge } from "react-icons/si";
-import { FaArrowDown } from "react-icons/fa6";
-import { NavLink } from 'react-router-dom';
+import { NavLink,useNavigate } from 'react-router-dom';
 import { DownOutlined } from '@ant-design/icons';
 import { Dropdown, Space,Drawer } from 'antd';
-import {Link,useNavigate} from 'react-router-dom' 
+import {Link} from 'react-router-dom' 
 import { FaBars } from "react-icons/fa";
-import {useSelector,useDispatch} from "react-redux";
-import {useLogoutMutation} from "../../redux/features/auth/userApiSlice";
-import {logout} from "../../redux/features/auth/authSlice";
+
 
 
 const PlatformHeader = () => {
-
+  const navigate = useNavigate();
+ // JSON string'ini JavaScript nesnesine dönüştür
+ const user = JSON.parse(localStorage.getItem("user"));
   const [open, setOpen] = useState(false);
 
-  const {userInfo} = useSelector((state) => state.auth);
-  const dispatch = useDispatch();
-  const navigate = useNavigate();
-  const [logoutApiCall] = useLogoutMutation();
+
 
   const handleLogout = async () => {
-    try {
-      await logoutApiCall().unwrap();
-      dispatch(logout());
-      navigate("/giris");
-    } catch (error) {
-      console.log(error);
-    }
+    localStorage.removeItem("user");
+    navigate("/");
   }
   const items = [
     {
@@ -98,7 +89,9 @@ const PlatformHeader = () => {
   >
     <a onClick={(e) => e.preventDefault()}>
       <Space>
-      {userInfo && userInfo.name ? userInfo.name : "Kullanıcı"}{" "}
+      <span>
+        {user && user.email}
+      </span>
         <DownOutlined />
       </Space>
     </a>
@@ -139,7 +132,7 @@ const PlatformHeader = () => {
   >
     <a onClick={(e) => e.preventDefault()}>
       <Space>
-      {userInfo && userInfo.name ? userInfo.name : "Kullanıcı"}{" "}
+      <span>Kullanıcı</span>
         <DownOutlined />
       </Space>
     </a>

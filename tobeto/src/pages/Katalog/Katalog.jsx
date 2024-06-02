@@ -5,23 +5,27 @@ import Footer from "../../components/Footer/Footer";
 import axios from "axios";
 
 const Katalog = () => {
+
   const [searchTerm, setSearchTerm] = useState("");
   const [katalog, setKatalog] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 9; // Sayfa başına gösterilecek öğe sayısı
+  const apiUrl = import.meta.env.VITE_API_BASE_URL;
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await axios.get("json/katalogData.json");
-        const data = res.data;
-        setKatalog(data);
+        const res = await axios.get(`${apiUrl}/api/catalog`);
+        const {catalog} = res.data;
+        setKatalog(catalog);
       } catch (error) {
         console.log(error);
       }
     };
     fetchData();
-  }, []);
+  }, [
+    apiUrl
+  ]);
 
   const handleSearch = (e) => {
     setSearchTerm(e.target.value);
@@ -70,22 +74,26 @@ const Katalog = () => {
         </div>
         {/* component right */}
         <div className=" sm:w-[70%] w-full p-1 mx-10">
-          <ul className="grid sm:grid-cols-3 grid-cols-1 sm:gap-10 gap-2 sm:pb-10 pb-5">
-            {filteredItems.map((item) => (
-              <li key={item.id} className="flex flex-col items-start gap-y-5">
-                <img
-                  src={item.image}
-                  alt=""
-                  className="sm:w-full w-[80%] h-[200px] object-cover rounded-lg"
-                />
-                <div className="flex items-center  w-full sm:justify-between justify-start sm:gap-x-0 gap-x-20  px-2">
-                  <h3 className="sm:text-2xl text-sm  font-bold">{item.title}</h3>
-                  <p>{item.time}</p>
-                </div>
-                <p>{item.description}</p>
-              </li>
-            ))}
-          </ul>
+        <ul className="grid sm:grid-cols-3 grid-cols-1 sm:gap-10 gap-2 sm:pb-10 pb-5">
+  {filteredItems.map((item) => (
+    <li key={item.id} className="flex flex-col items-start gap-y-5">
+      <video
+        className="sm:w-full w-[80%] h-[200px] object-cover rounded-lg"
+        controls
+      >
+        <source src={item.video} type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+      <div className="flex items-center w-full sm:justify-between justify-start sm:gap-x-0 gap-x-20 px-2">
+        <h3 className="sm:text-2xl text-sm font-bold">{item.title}</h3>
+        <p>{item.time}</p>
+      </div>
+      <p>{item.description}</p>
+    </li>
+  ))}
+</ul>
+
+
           <Pagination
             className="text-white bg-white p-1 rounded-lg"
             defaultCurrent={1}

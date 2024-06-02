@@ -20,9 +20,18 @@ import TobetoProfilim from "../pages/TobetoProfilim/TobetoProfilim";
 import TobetoDegerlendirmeler from "../pages/TobetoDegerlendirmeler/TobetoDegerlendirmeler";
 import TobetoKatalog from "../pages/TobetoKatalog/TobetoKatalog";
 import TobetoTakvim from "../pages/TobetoTakvim/TobetoTakvim";
-import TobetoIstanbulKodluyor from "../pages/TobetoIstanbulKodluyor/TobetoIstanbulKodluyor";
 import ProfilBilgileri from "../pages/ProfilBilgileri/ProfilBilgileri";
-
+import AdminUserPage from "../pages/admin/AdminUserPage";
+import EducationPage from "../pages/admin/education/EducationPage";
+import EducationsCreatePage from "../pages/admin/education/EducationsCreatePage";
+import EducationsUpdataPage from "../pages/admin/education/EducationsUpdataPage";
+import AnnouncementCreatePage from "../pages/admin/announcement/AnnouncementCreatePage";
+import AnnouncementPage from "../pages/admin/announcement/AnnouncementPage";
+import AnnouncementUpdataPage   from "../pages/admin/announcement/AnnouncementUpdataPage";
+import CatalogPage from "../pages/admin/catalog/CatalogPage";
+import CatalogCreatePage from "../pages/admin/catalog/CatalogCreatePage";
+import CatalogUpdataPage from "../pages/admin/catalog/CatalogUpdataPage";
+import AdminPage from "../pages/admin/AdminPage";
 export const CustomRouter = [
     {
         path : "/",
@@ -105,15 +114,55 @@ export const CustomRouter = [
         element : <TobetoTakvim/>
     },
     {
-        path : "/tobetoistanbulkodluyor",
-        element : <TobetoIstanbulKodluyor/>
-    },
-    {
         path : "/profilbilgileri",
         element : <ProfilBilgileri/>
     },
     {
         path : "*",
         element : <NotFoundPage/>
+    },
+    {
+        path : "/admin/users",
+        element : <AdminUserPage/>
+    },
+    {
+        path : "/admin/educations",
+        element : <EducationPage/>
+    },
+    {
+        path : "/admin/educations/create",
+        element : <EducationsCreatePage/>
+    },
+    {
+        path : "/admin/educations/update/:id",
+        element : <EducationsUpdataPage/>
+    },
+    {
+        path : "/admin/announcement/create",
+        element : <AnnouncementCreatePage/>
+    },
+    {
+        path : "/admin/announcement",
+        element : <AnnouncementPage/>
+    },
+    {
+        path : "/admin/announcement/update/:id",
+        element : <AnnouncementUpdataPage/>
+    },
+    {
+        path : "/admin/catalog",
+        element : <CatalogPage/>
+    },
+    {
+        path : "/admin/catalog/create",
+        element : <CatalogCreatePage/>
+    },
+    {
+        path : "/admin/catalog/update/:id",
+        element : <CatalogUpdataPage/>
+    },
+    {
+        path : "/admin",
+        element : <AdminPage/>
     }
 ]

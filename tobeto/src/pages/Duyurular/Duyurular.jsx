@@ -10,15 +10,19 @@ const Duyurular = () => {
   const [selectedSort, setSelectedSort] = useState("");
 
   const [duyurular, setDuyurular] = useState([])
+  const apiUrl = import.meta.env.VITE_API_BASE_URL;
 
   useEffect(() => {
-    const fetchDuyurular = async () => {
-      const res =  await axios.get('jsonFormat/DuyurularPage.json')
-      const data = await res.data
-      setDuyurular(data)
+    const fetchData = async () => {
+      const res = await axios.get(`${apiUrl}/api/announcement`);
+      const {announcement} = await res.data;
+      setDuyurular(announcement);
     }
-    fetchDuyurular()
-  }, []);
+    fetchData()
+  }, [
+    apiUrl
+  ])
+
 
   const handleInputChange = (e) => {
     setSearchValue(e.target.value);
@@ -34,7 +38,7 @@ const Duyurular = () => {
     setSelectedSort(e.target.value);
     console.log("Seçilen Sıralama:", e.target.value);
   };
-
+  console.log(duyurular);
   return (
     <div className="bg-gray-100 w-full min-h-screen">
       <PlatformHeader />
@@ -95,20 +99,23 @@ const Duyurular = () => {
           </select>
         </div>
       </div>
-
+     
       <ul className='grid sm:grid-cols-3 grid-cols-1 gap-10 container mx-auto mt-10 pb-32'>
           {
             duyurular.map((duyuru) => (
-              <li className='border h-[140px] flex flex-col items-start justify-between p-3 shadow-lg shadow-gray-600 rounded-2xl'>
+              <li key={duyuru._id} className='border h-[140px] flex flex-col items-start justify-between p-3 shadow-lg shadow-gray-600 rounded-2xl'>
               <div className='flex items-center justify-between w-full text-xs text-green-600'>
               <span>Duyuru</span>
               <span>İstanbul Kodluyor</span>
               </div>
               <p className='font-medium text-base text-gray-600 tracking-wide'>{duyuru.title} </p>
+              <p className="text-black text-sm">
+                {duyuru.description && duyuru.description.length > 100 ? duyuru.description.substring(0,100) + '...' : duyuru.description}
+              </p>
               <div className='flex items-center justify-between w-full text-xs text-green-600'>
               <div className='flex items-center gap-x-1'>
                   <span><BsCalendarDate /></span>
-                <span>{duyuru.date} </span>
+                <span>{duyuru.createdAt && new Date(duyuru.createdAt).toLocaleDateString('tr-TR') } </span>
               </div>
               <span>Devamını Oku</span>
               </div>

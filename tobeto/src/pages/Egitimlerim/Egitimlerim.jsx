@@ -15,15 +15,17 @@ const Egitimlerim = () => {
   const [selectedSort, setSelectedSort] = useState("");
 
   const [egitimlerData,setEgitimlerData] = useState([])
-
+  const apiUrl = import.meta.env.VITE_API_BASE_URL;
   useEffect(() => {
     const fetchData = async () => {
-      const res = await axios.get("jsonFormat/PlatformEgitimler.json");
-      const data = await res.data;
-      setEgitimlerData(data);
+      const res = await axios.get(`${apiUrl}/api/education`);
+      const {educations} = await res.data;
+      setEgitimlerData(educations);
     }
     fetchData()
-  }, [])
+  }, [
+    apiUrl
+  ])
 
 
   const handleInputChange = (e) => {

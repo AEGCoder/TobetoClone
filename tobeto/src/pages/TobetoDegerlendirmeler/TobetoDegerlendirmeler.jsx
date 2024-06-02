@@ -2,8 +2,17 @@ import React from "react";
 import PlatformHeader from "../../components/PlatformHeader/PlatformHeader";
 import { IoMdArrowDropright } from "react-icons/io";
 import { FaSitemap } from "react-icons/fa6";
-
+import { useEffect } from "react";
+import { useNavigate } from "react-router";
 const TobetoDegerlendirmeler = () => {
+  const navigate = useNavigate();
+  // JSON string'ini JavaScript nesnesine dönüştür
+  const user = JSON.parse(localStorage.getItem("user"));
+  useEffect(() => {
+    if (!user) {
+      navigate("/");
+    }
+  }, [user, navigate]);
   return (
     <div className="bg-gray-100 w-full min-h-screen text-black">
       <PlatformHeader />

@@ -1,36 +1,40 @@
-import React,{useState,useEffect} from "react";
+import React,{useEffect} from "react";
 import Footer from "../../components/Footer/Footer";
 import { Form, Input } from "antd";
 import { Link,useNavigate} from "react-router-dom";
 import {useDispatch,useSelector} from "react-redux";
-import {useLoginMutation} from "../../redux/features/auth/userApiSlice"
-import {setCredentials} from "../../redux/features/auth/authSlice"
+import axios from "axios";
 import {toast} from "react-toastify"
 const GirisPage = () => {
   const navigate = useNavigate();
-  const dispatch = useDispatch()
-  const [login,{isLoading}] = useLoginMutation()
-
-
-    const {userInfo} = useSelector((state) => state.auth)
-
-    useEffect(() => {
-      if(userInfo){
-        navigate("/platform")
-      }
-    }, [navigate,userInfo]);
-
+  const apiUrl= import.meta.env.VITE_API_BASE_URL;
 
   const onFinish = async (values) => {
-      try {
-        const res = await login(values).unwrap()
-        dispatch(setCredentials({...res}))
-        navigate("/platform")
-        toast.success("Giriş Başarılı")
-
-      } catch (error) {
-        toast.error(error?.data?.message || error.error);
+    try {
+      const response = await axios.post(
+        `${apiUrl}/api/auth/login`,
+        {
+          email: values.email,
+          password: values.password,
+        }
+      );
+      if (response.status === 200) {
+        const { user } = response.data;
+        const { password, ...rest } = user; // password'u çıkart
+        localStorage.setItem("user", JSON.stringify(rest));
+        toast.success("Başarıyla giriş yaptınız");
+        if (rest.role === "admin") {
+          window.location.href = "/admin";
+        } else {
+          navigate("/");
+        }
+      } else {
+        toast.error("Bir hata oluştu");
       }
+    } catch (error) {
+      console.log(error);
+      toast.error("Bir hata oluştu");
+    }
   };
   const onFinishFailed = (errorInfo) => {
     console.log("Failed:", errorInfo);

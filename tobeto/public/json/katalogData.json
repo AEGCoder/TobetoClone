@@ -4,209 +4,239 @@
         "title": "John Doe",
         "description": "John Doe is a web developer and designer",
         "image": "https://tobeto.s3.cloud.ngn.com.tr/ENK_36573_a8546fa0ff.jpg",
-        "time": "4s 14dk"
+        "time": "4s 14dk",
+        "video": "video1.mp4"
     },
     {
         "id": 2,
         "title": "Jane Smith",
         "description": "Jane Smith is a software engineer",
         "image": "https://tobeto.s3.cloud.ngn.com.tr/ENK_365670_08eb2bab1a.jpg",
-        "time": "2s 30dk"
+        "time": "2s 30dk",
+        "video": "video2.mp4"
     },
     {
         "id": 3,
         "title": "David Johnson",
         "description": "David Johnson is a graphic designer",
         "image": "https://tobeto.s3.cloud.ngn.com.tr/ENK_365693_fd2d22fa3a.jpg",
-        "time": "1s 45dk"
+        "time": "1s 45dk",
+        "video": "video3.mp4"
     },
     {
         "id": 4,
         "title": "Emily Wilson",
         "description": "Emily Wilson is a front-end developer",
         "image": "https://tobeto.s3.cloud.ngn.com.tr/ENK_365274_0e51ec7bdb.jpg",
-        "time": "3s 10dk"
+        "time": "3s 10dk",
+        "video": "video4.mp4"
     },
     {
         "id": 5,
         "title": "Michael Brown",
         "description": "Michael Brown is a UX/UI designer",
         "image": "https://tobeto.s3.cloud.ngn.com.tr/ENK_365270_7e8908a0c2.jpg",
-        "time": "5s 20dk"
+        "time": "5s 20dk",
+        "video": "video5.mp4"
     },
     {
         "id": 6,
         "title": "Olivia Davis",
         "description": "Olivia Davis is a mobile app developer",
         "image": "https://tobeto.s3.cloud.ngn.com.tr/ENKG_616_3e86ae6eba.jpg",
-        "time": "2s 5dk"
+        "time": "2s 5dk",
+        "video": "video6.mp4"
     },
     {
         "id": 7,
         "title": "William Taylor",
         "description": "William Taylor is a backend developer",
         "image": "https://tobeto.s3.cloud.ngn.com.tr/ENKG_389_65af6d2667.jpg",
-        "time": "4s 50dk"
+        "time": "4s 50dk",
+        "video": "video1.mp4"
     },
     {
         "id": 8,
         "title": "Sophia Martin",
         "description": "Sophia Martin is a game developer",
         "image": "https://tobeto.s3.cloud.ngn.com.tr/ENKG_275_b356d6fb3d.jpg",
-        "time": "3s 30dk"
+        "time": "3s 30dk",
+        "video": "video2.mp4"
     },
     {
         "id": 9,
         "title": "Daniel Anderson",
         "description": "Daniel Anderson is a system analyst",
         "image": "https://tobeto.s3.cloud.ngn.com.tr/ENIB_116_5a33bf9410.jpg",
-        "time": "2s 15dk"
+        "time": "2s 15dk",
+        "video": "video3.mp4"
     },
     {
         "id": 10,
         "title": "Ava White",
         "description": "Ava White is a full-stack developer",
         "image": "https://tobeto.s3.cloud.ngn.com.tr/ENIB_238_ea465ab18a.jpg",
-        "time": "1s 55dk"
+        "time": "1s 55dk",
+        "video": "video4.mp4"
     },
     {
         "id": 11,
         "title": "James Wilson",
         "description": "James Wilson is a UI designer",
         "image": "img/bottom1.png",
-        "time": "4s 25dk"
+        "time": "4s 25dk",
+        "video": "video5.mp4"
     },
     {
         "id": 12,
         "title": "Ella Garcia",
         "description": "Ella Garcia is a software architect",
         "image": "img/bottom1.png",
-        "time": "2s 40dk"
+        "time": "2s 40dk",
+        "video": "video6.mp4"
     },
     {
         "id": 13,
         "title": "Benjamin Smith",
         "description": "Benjamin Smith is a front-end developer",
         "image": "img/bottom1.png",
-        "time": "3s 5dk"
+        "time": "3s 5dk",
+        "video": "video1.mp4"
     },
     {
         "id": 14,
         "title": "Lily Johnson",
         "description": "Lily Johnson is a web designer",
         "image": "img/bottom1.png",
-        "time": "5s 15dk"
+        "time": "5s 15dk",
+        "video": "video2.mp4"
     },
     {
         "id": 15,
         "title": "Christopher Davis",
         "description": "Christopher Davis is a mobile app developer",
         "image": "img/bottom1.png",
-        "time": "1s 50dk"
+        "time": "1s 50dk",
+        "video": "video3.mp4"
     },
     {
         "id": 16,
         "title": "Grace Martinez",
         "description": "Grace Martinez is a backend developer",
         "image": "img/bottom1.png",
-        "time": "4s 40dk"
+        "time": "4s 40dk",
+        "video": "video4.mp4"
     },
     {
         "id": 17,
         "title": "Logan Taylor",
         "description": "Logan Taylor is a UX/UI designer",
         "image": "img/bottom1.png",
-        "time": "3s 20dk"
+        "time": "3s 20dk",
+        "video": "video5.mp4"
     },
     {
         "id": 18,
         "title": "Mia Wilson",
         "description": "Mia Wilson is a game developer",
         "image": "img/bottom1.png",
-        "time": "2s 10dk"
+        "time": "2s 10dk",
+        "video": "video6.mp4"
     },
     {
         "id": 19,
         "title": "Jacob Martin",
         "description": "Jacob Martin is a system analyst",
         "image": "img/bottom1.png",
-        "time": "1s 35dk"
+        "time": "1s 35dk",
+        "video": "video1.mp4"
     },
     {
         "id": 20,
         "title": "Avery Anderson",
         "description": "Avery Anderson is a full-stack developer",
         "image": "img/bottom1.png",
-        "time": "5s 5dk"
+        "time": "5s 5dk",
+        "video": "video2.mp4"
     },
     {
         "id": 21,
         "title": "Abigail White",
         "description": "Abigail White is a UI designer",
         "image": "img/bottom1.png",
-        "time": "4s 30dk"
+        "time": "4s 30dk",
+        "video": "video3.mp4"
     },
     {
         "id": 22,
         "title": "Carter Garcia",
         "description": "Carter Garcia is a software architect",
         "image": "img/bottom1.png",
-        "time": "2s 55dk"
+        "time": "2s 55dk",
+        "video": "video4.mp4"
     },
     {
         "id": 23,
         "title": "Scarlett Smith",
         "description": "Scarlett Smith is a front-end developer",
         "image": "img/bottom1.png",
-        "time": "3s 40dk"
+        "time": "3s 40dk",
+        "video": "video5.mp4"
     },
     {
         "id": 24,
         "title": "Jackson Johnson",
         "description": "Jackson Johnson is a web designer",
         "image": "img/bottom1.png",
-        "time": "1s 20dk"
+        "time": "1s 20dk",
+        "video": "video6.mp4"
     },
     {
         "id": 25,
         "title": "Aria Davis",
         "description": "Aria Davis is a mobile app developer",
         "image": "img/bottom1.png",
-        "time": "4s 10dk"
+        "time": "4s 10dk",
+        "video": "video1.mp4"
     },
     {
         "id": 26,
         "title": "Ethan Martinez",
         "description": "Ethan Martinez is a backend developer",
         "image": "img/bottom1.png",
-        "time": "3s 50dk"
+        "time": "3s 50dk",
+        "video": "video2.mp4"
     },
     {
         "id": 27,
         "title": "Hazel Taylor",
         "description": "Hazel Taylor is a UX/UI designer",
         "image": "img/bottom1.png",
-        "time": "2s 25dk"
+        "time": "2s 25dk",
+        "video": "video3.mp4"
     },
     {
         "id": 28,
         "title": "Lucas Wilson",
         "description": "Lucas Wilson is a game developer",
         "image": "img/bottom1.png",
-        "time": "5s 30dk"
+        "time": "5s 30dk",
+        "video": "video4.mp4"
     },
     {
         "id": 29,
         "title": "Luna Martin",
         "description": "Luna Martin is a system analyst",
         "image": "img/bottom1.png",
-        "time": "2s 20dk"
+        "time": "2s 20dk",
+        "video": "video5.mp4"
     },
     {
         "id": 30,
         "title": "Noah Anderson",
         "description": "Noah Anderson is a full-stack developer",
         "image": "img/bottom1.png",
-        "time": "4s 5dk"
+        "time": "4s 5dk",
+        "video": "video6.mp4"
     }
 ]
